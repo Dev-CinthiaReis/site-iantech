@@ -1,0 +1,102 @@
+/* --- 1. RESET E VARIÁVEIS --- */
+:root {
+    --bg-color: #0b1120;
+    --card-bg: rgba(30, 41, 59, 0.4);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-purple: #d946ef;
+    --grad-blue: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+    --grad-purple: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    --container-padding: 0 10%;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+
+/* --- 2. HEADER --- */
+.main-header {
+    display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%;
+    position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(11, 17, 32, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; }
+.logo span { color: var(--accent-blue); }
+.navbar ul { display: flex; list-style: none; gap: 2.5rem; }
+.navbar a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: 0.3s; }
+.navbar a:hover, .navbar a.active-link { color: var(--accent-blue); }
+.btn-whatsapp {
+    padding: 10px 24px; background: #25D366; color: white; border-radius: 50px; text-decoration: none;
+    font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s;
+}
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+
+/* --- 3. HERO --- */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: var(--container-padding); position: relative; padding-top: 80px; }
+.hero-content { max-width: 600px; z-index: 2; }
+.badge { display: inline-block; padding: 6px 16px; background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
+.text-blue { background: var(--grad-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.text-purple { background: var(--grad-purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 500px; }
+.hero-buttons { display: flex; gap: 1rem; }
+.btn-primary, .btn-outline { padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+.btn-primary { background: var(--grad-blue); color: white; }
+.btn-primary:hover { transform: translateY(-3px); }
+.btn-outline { border: 1px solid rgba(255,255,255,0.2); color: white; }
+.btn-outline:hover { background: rgba(255,255,255,0.05); }
+
+/* Visual Hero */
+.hero-visual { position: relative; width: 450px; height: 400px; display: flex; justify-content: center; align-items: center; }
+.floating-card { position: absolute; width: 180px; padding: 25px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.card-support { top: 10%; left: 0; border-top: 4px solid var(--accent-blue); animation: float 6s ease-in-out infinite; }
+.card-dev { bottom: 20%; right: 0; border-top: 4px solid var(--accent-purple); animation: float 6s ease-in-out infinite 1s; }
+.floating-card i { font-size: 2.5rem; margin-bottom: 5px; }
+.card-support i { color: var(--accent-blue); }
+.card-dev i { color: var(--accent-purple); }
+.glow { position: absolute; width: 400px; height: 400px; filter: blur(120px); opacity: 0.25; z-index: -1; border-radius: 50%; }
+.glow-blue { background: var(--accent-blue); top: -10%; left: -10%; }
+.glow-purple { background: var(--accent-purple); bottom: 10%; right: -10%; }
+
+/* --- 4. GERAL (Cards) --- */
+.services, .pricing { padding: 6rem 10%; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.grid-container, .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-box, .price-card { background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; opacity: 0; transform: translateY(20px); }
+.service-box.show, .price-card.show { opacity: 1; transform: translateY(0); }
+.service-box:hover, .price-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.07); }
+.icon-wrapper { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.8rem; background: rgba(255,255,255,0.05); }
+.type-support .icon-wrapper { color: var(--accent-blue); }
+.type-dev .icon-wrapper { color: var(--accent-purple); }
+.service-list, .price-list { list-style: none; margin-top: 1.5rem; color: var(--text-secondary); }
+.service-list li, .price-list li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+.price { display: block; font-size: 2.5rem; font-weight: 800; margin: 15px 0; color: var(--text-primary); }
+.price small { font-size: 1rem; color: var(--text-secondary); font-weight: 400; }
+.price-card.popular { background: rgba(30, 41, 59, 0.7); border: 1px solid var(--accent-purple); transform: scale(1.05); z-index: 10; }
+.badge-popular { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--grad-purple); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+.btn-price { display: block; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.1); color: white; transition: 0.3s; }
+.btn-highlight { background: var(--grad-purple); border: none; }
+
+/* --- 5. MODAL --- */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 17, 32, 0.85); backdrop-filter: blur(8px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-box { background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; width: 90%; max-width: 500px; position: relative; transform: translateY(20px); transition: 0.3s ease; }
+.modal-overlay.active .modal-box { transform: translateY(0); }
+.close-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--text-secondary); cursor: pointer; }
+.input-group { margin-bottom: 1.2rem; text-align: left; }
+.input-group label { display: block; font-size: 0.9rem; color: #cbd5e1; margin-bottom: 5px; }
+.input-group input, .input-group select, .input-group textarea { width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none; transition: 0.3s; }
+.input-group input:focus { border-color: var(--accent-blue); }
+.btn-submit { width: 100%; padding: 14px; background: var(--grad-blue); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+
+/* --- 6. MOBILE --- */
+@media (max-width: 900px) {
+    .main-header { flex-direction: column; padding: 1rem; gap: 1rem; }
+    .hero { flex-direction: column; text-align: center; padding-top: 180px; gap: 4rem; }
+    .hero-visual { display: none; }
+    .grid-container, .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.popular { transform: scale(1); }
+    .service-box, .price-card { opacity: 1; transform: translateY(0); }
+}
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }

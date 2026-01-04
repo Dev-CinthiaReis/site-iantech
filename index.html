@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ian Tech - Soluções em TI e Web.">
+    <title>Ian Tech | Suporte & Web</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">IAN<span>TECH</span></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active-link">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="precos.html">Planos</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/5561996038031" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> <span>Suporte Rápido</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="badge">Soluções de Ponta a Ponta</span>
+                <h1>Hardware Estável <span class="text-blue">&</span> <br> Software <span class="text-purple">Inteligente</span></h1>
+                <p>Unificamos a estabilidade do Suporte Técnico com a inovação do Desenvolvimento Web.</p>
+                <div class="hero-buttons">
+                    <a href="precos.html" class="btn-primary">Ver Preços</a>
+                    <a href="#" class="btn-outline btn-open-modal">Falar com Técnico</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-support">
+                    <i class="fas fa-screwdriver-wrench"></i> <span>Suporte</span> <small>Manutenção</small>
+                </div>
+                <div class="floating-card card-dev">
+                    <i class="fas fa-code"></i> <span>Dev. Web</span> <small>Sistemas</small>
+                </div>
+            </div>
+            <div class="glow glow-blue"></div>
+            <div class="glow glow-purple"></div>
+        </section>
+
+        <section class="services" id="servicos">
+            <div class="section-header">
+                <h2>Expertise Técnica</h2>
+                <p>Selecione a área que você precisa hoje</p>
+            </div>
+            <div class="grid-container">
+                <article class="service-box type-support">
+                    <div class="icon-wrapper"><i class="fas fa-headset"></i></div>
+                    <h3>Suporte de TI</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Manutenção de Hardware</li>
+                        <li><i class="fas fa-check"></i> Redes e Wi-Fi</li>
+                        <li><i class="fas fa-check"></i> Remoção de Vírus</li>
+                    </ul>
+                </article>
+                <article class="service-box type-dev">
+                    <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Sites & Web</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Sites Responsivos</li>
+                        <li><i class="fas fa-check"></i> Lojas Virtuais</li>
+                        <li><i class="fas fa-check"></i> Landing Pages</li>
+                    </ul>
+                </article>
+                <article class="service-box type-dev">
+                    <div class="icon-wrapper"><i class="fas fa-database"></i></div>
+                    <h3>Sistemas</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Painéis Admin</li>
+                        <li><i class="fas fa-check"></i> Banco de Dados</li>
+                        <li><i class="fas fa-check"></i> Automação</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+            <p>&copy; 2026 Nexus Tech.</p>
+        </div>
+    </footer>
+    <div id="modal-contato" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-header">
+                <h3>Falar com <span class="text-blue">Especialista</span></h3>
+                <p>Preencha para enviar direto ao WhatsApp.</p>
+            </div>
+            
+            <form class="contact-form" id="form-whatsapp">
+                <div class="input-group">
+                    <label>Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Ex: João Silva" required>
+                </div>
+                <div class="input-group">
+                    <label>Seu WhatsApp ou E-mail</label>
+                    <input type="text" id="contato" placeholder="(DD) 99999-9999" required>
+                </div>
+                <div class="input-group">
+                    <label>Assunto</label>
+                    <select id="assunto">
+                        <option>Suporte Técnico</option>
+                        <option>Orçamento de Site</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Mensagem</label>
+                    <textarea id="mensagem" rows="4" placeholder="Descreva..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

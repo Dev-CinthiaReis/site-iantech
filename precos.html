@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian Tech | Planos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">IAN<span>.TECH</span></div>
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="precos.html" class="active-link" style="color: var(--accent-blue);">Planos</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/5561996038031" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> <span>Suporte Rápido</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="pricing" style="padding-top: 150px; min-height: 80vh;">
+            <div class="section-header">
+                <h2>Investimento Inteligente</h2>
+                <p>Escolha o melhor plano para você</p>
+            </div>
+        
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Suporte Mensal</h3>
+                        <span class="price">R$ 150<small>/mês</small></span>
+                    </div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Visita técnica mensal</li>
+                        <li><i class="fas fa-check"></i> Suporte remoto</li>
+                    </ul>
+                    <a href="#" class="btn-price btn-open-modal">Assinar</a>
+                </div>
+                <div class="price-card popular">
+                    <div class="badge-popular">Pop</div>
+                    <div class="price-header">
+                        <h3>Site One-Page</h3>
+                        <span class="price">R$ 900<small>único</small></span>
+                    </div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Site Responsivo</li>
+                        <li><i class="fas fa-check"></i> Botão WhatsApp</li>
+                    </ul>
+                    <a href="#" class="btn-price btn-highlight btn-open-modal">Comprar</a>
+                </div>
+                <div class="price-card">
+                    <div class="price-header">
+                        <h3>Sistema Web</h3>
+                        <span class="price">Sob Medida</span>
+                    </div>
+                    <ul class="price-list">
+                        <li><i class="fas fa-check"></i> Painel Admin</li>
+                        <li><i class="fas fa-check"></i> Banco de Dados</li>
+                    </ul>
+                    <a href="#" class="btn-price btn-open-modal">Cotar</a>
+                </div>
+            </div>
+            <div class="glow glow-purple" style="top: 20%; right: -10%;"></div>
+            <div class="glow glow-blue" style="bottom: 10%; left: -10%;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+            <p>&copy; 2026 Ian Tech.</p>
+        </div>
+    </footer>
+
+    <div id="modal-contato" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-header">
+                <h3>Falar com <span class="text-blue">Especialista</span></h3>
+                <p>Preencha para enviar direto ao WhatsApp.</p>
+            </div>
+            <form class="contact-form" id="form-whatsapp">
+                <div class="input-group">
+                    <label>Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Ex: João Silva" required>
+                </div>
+                <div class="input-group">
+                    <label>Seu WhatsApp ou E-mail</label>
+                    <input type="text" id="contato" placeholder="(DD) 99999-9999" required>
+                </div>
+                <div class="input-group">
+                    <label>Assunto</label>
+                    <select id="assunto">
+                        <option>Suporte Técnico</option>
+                        <option>Orçamento de Site</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Mensagem</label>
+                    <textarea id="mensagem" rows="4" placeholder="Descreva..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
